@@ -1,10 +1,24 @@
 package com.tqc;
 
-/**
- * Hello world!
- */
+import com.google.inject.Guice;
+import com.tqc.inter.MyApplet;
+
 public class App {
+
+	/**
+	 * bootstrap
+	 * parse command line
+	 * set up environment
+	 * kick off main logic
+	 *
+	 * @param args [description]
+	 */
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		MyApplet mainApplet = Guice.createInjector(
+				new MainModule()
+		).getInstance(MyApplet.class);
+
+		mainApplet.run();
 	}
+
 }
