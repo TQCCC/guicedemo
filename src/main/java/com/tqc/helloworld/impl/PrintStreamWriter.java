@@ -1,6 +1,6 @@
-package com.tqc.inter.impl;
+package com.tqc.helloworld.impl;
 
-import com.tqc.inter.MyDestination;
+import com.tqc.helloworld.MyDestination;
 
 import javax.inject.Inject;
 import java.io.PrintStream;

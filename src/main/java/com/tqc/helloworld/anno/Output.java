@@ -1,4 +1,4 @@
-package com.tqc.anno;
+package com.tqc.helloworld.anno;
 
 import com.google.inject.BindingAnnotation;
 

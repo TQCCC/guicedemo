@@ -1,11 +1,11 @@
-package com.tqc;
+package com.tqc.helloworld;
 
 import com.google.inject.AbstractModule;
-import com.tqc.anno.Output;
-import com.tqc.inter.MyApplet;
-import com.tqc.inter.MyDestination;
-import com.tqc.inter.impl.PrintStreamWriter;
-import com.tqc.inter.impl.StringWritingApplet;
+import com.tqc.helloworld.anno.Output;
+import com.tqc.helloworld.MyApplet;
+import com.tqc.helloworld.MyDestination;
+import com.tqc.helloworld.impl.PrintStreamWriter;
+import com.tqc.helloworld.impl.StringWritingApplet;
 
 import java.io.PrintStream;
 

@@ -1,7 +1,7 @@
 package com.tqc;
 
 import com.google.inject.Guice;
-import com.tqc.inter.MyApplet;
+import com.tqc.helloworld.MyApplet;
 
 public class App {
 
