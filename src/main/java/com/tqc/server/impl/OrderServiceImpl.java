@@ -10,8 +10,11 @@ import javax.inject.Inject;
  * Created by tangqingchang on 2017/12/23.
  */
 public class OrderServiceImpl implements OrderService {
+
 	private final PriceService priceService;
+
 	private final PaymentService paymentService;
+
 	private final SessionManager sessionManager;
 
 	private Long ordersPaid = 0L;

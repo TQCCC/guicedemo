@@ -9,6 +9,7 @@ import com.tqc.server.impl.PriceServiceImpl;
  * Created by tangqingchang on 2017/12/23.
  */
 public class ServerModule extends AbstractModule {
+
 	@Override
 	protected void configure() {
 		bind(OrderService.class).to(OrderServiceImpl.class);
