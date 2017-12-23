@@ -1,5 +1,7 @@
 package com.tqc.server;
 
+import java.util.List;
+
 /**
  * Created by tangqingchang on 2017/12/23.
  */
@@ -10,4 +12,6 @@ public interface PriceService {
 	 * @return
 	 */
 	long getPrice(long orderId);
+
+	List<String> getSupportedCurrencies();
 }

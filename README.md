@@ -8,8 +8,3 @@
 - 一个花式Hello World
 - 课程中老师不断重构代码，让人体会到依赖注入对代码的好处
 - 和Spring作比较
-
-编译运行: 
-```bash
-mvn compile && mvn exec:java -Dexec.mainClass="com.tqc.App"
-```
