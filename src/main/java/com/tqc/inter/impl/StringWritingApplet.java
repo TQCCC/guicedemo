@@ -1,6 +1,7 @@
 package com.tqc.inter.impl;
 
 import com.google.inject.Provider;
+import com.tqc.anno.Output;
 import com.tqc.inter.MyApplet;
 import com.tqc.inter.MyDestination;
 
@@ -16,7 +17,7 @@ public class StringWritingApplet implements MyApplet {
 	private Provider<String> stringProvider;
 
 	@Inject
-	public StringWritingApplet(MyDestination destination, Provider<String> stringProvider) {
+	public StringWritingApplet(MyDestination destination, @Output Provider<String> stringProvider) {
 		this.destination = destination;
 		this.stringProvider = stringProvider;
 	}
