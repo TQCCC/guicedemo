@@ -1,14 +1,23 @@
 package com.tqc.server.impl;
 
+import com.google.inject.Provider;
+import com.tqc.server.anno.SessionId;
+
+import javax.inject.Inject;
+
 /**
  * Created by tangqingchang on 2017/12/23.
  */
 public class SessionManager {
-	/**
-	 * 获取当前会话id
-	 * @return
-	 */
+
+	private final Provider<Long> sessionIdProvider;
+
+	@Inject
+	public SessionManager(@SessionId Provider<Long> sessionIdProvider) {
+		this.sessionIdProvider = sessionIdProvider;
+	}
+
 	public Long getSessionId() {
-		return 123L;
+		return sessionIdProvider.get();
 	}
 }
