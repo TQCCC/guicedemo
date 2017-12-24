@@ -1,4 +1,4 @@
-## guicedemo: Google Guice 实现依赖注入Demo
+## [guicedemo](./guicedemo): Google Guice 实现依赖注入Demo
 
 ---
 **程序员就是要不停的学习！**
@@ -9,5 +9,5 @@
 - 课程中老师不断重构代码，让人体会到封装、依赖注入对代码的好处
 - 和Spring作比较
 
-## guicedemospring: Google Guice与Spring Boot相结合Demo
+## [guicedemospring](./guicedemospring): Google Guice与Spring Boot相结合Demo
 
