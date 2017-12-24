@@ -2,8 +2,7 @@ package com.tqc.helloworld.module;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
-import com.google.inject.multibindings.MapBinder;
-import com.tqc.helloworld.MyApplet;
+import com.tqc.helloworld.Applets;
 import com.tqc.helloworld.MyDestination;
 import com.tqc.helloworld.anno.Args;
 import com.tqc.helloworld.anno.Output;
@@ -21,8 +20,10 @@ public class HelloWorldModule extends AbstractModule {
 	@Override
 	protected void configure() {
 
-		MapBinder.newMapBinder(binder(), String.class, MyApplet.class)
-				.addBinding("hello").to(StringWritingApplet.class);
+		Applets.register(binder()).named("hello").to(StringWritingApplet.class);
+
+//		MapBinder.newMapBinder(binder(), String.class, MyApplet.class)
+//				.addBinding("hello").to(StringWritingApplet.class);
 
 //		bind(MyApplet.class)
 //				.annotatedWith(Names.named("hello"))
