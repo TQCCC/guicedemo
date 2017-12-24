@@ -8,3 +8,6 @@
 - 一个花式Hello World
 - 课程中老师不断重构代码，让人体会到封装、依赖注入对代码的好处
 - 和Spring作比较
+
+## guicedemospring: Google Guice与Spring Boot相结合Demo
+
