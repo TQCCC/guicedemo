@@ -1,7 +1,7 @@
 package com.tqc;
 
 import com.google.inject.AbstractModule;
-import com.tqc.helloworld.HelloWorldModule;
+import com.tqc.helloworld.module.HelloWorldModule;
 
 /**
  * Created by tangqingchang on 2017/12/23.

@@ -2,6 +2,7 @@ package com.tqc;
 
 import com.google.inject.Guice;
 import com.tqc.helloworld.MyApplet;
+import com.tqc.helloworld.module.CommandLineModule;
 
 public class App {
 
@@ -15,7 +16,8 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		MyApplet mainApplet = Guice.createInjector(
-				new MainModule()
+				new MainModule(),
+				new CommandLineModule(args)
 		).getInstance(MyApplet.class);
 
 		mainApplet.run();
