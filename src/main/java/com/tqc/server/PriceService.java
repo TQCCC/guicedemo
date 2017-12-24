@@ -13,5 +13,9 @@ public interface PriceService {
 	 */
 	long getPrice(long orderId);
 
+	/**
+	 * 获取支持的货币类型
+	 * @return
+	 */
 	List<String> getSupportedCurrencies();
 }

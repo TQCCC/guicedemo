@@ -26,17 +26,20 @@ public class OrderServiceTest {
 
 	@Before
 	public void setUp() {
-		Guice.createInjector(new ServerModule(), new AbstractModule() {
-			@Override
-			protected void configure() {
-				bind(PriceServiceImpl.class).toInstance(new PriceServiceImpl() {
+		Guice.createInjector(
+				new ServerModule(),
+				new AbstractModule() {
 					@Override
-					public long getPrice(long orderId) {
-						return 666L;
+					protected void configure() {
+						bind(PriceServiceImpl.class).toInstance(new PriceServiceImpl() {
+							@Override
+							public long getPrice(long orderId) {
+								return 666L;
+							}
+						});
 					}
-				});
-			}
-		})
+				}
+		)
 				.injectMembers(this);
 	}
 
