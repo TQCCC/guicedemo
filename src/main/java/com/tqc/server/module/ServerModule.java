@@ -29,10 +29,9 @@ public class ServerModule extends AbstractModule {
 		bind(PaymentService.class).to(PaymentServiceImpl.class);
 		bind(PriceService.class).to(PriceServiceImpl.class);
 
-		bind(new TypeLiteral<Cache<String, String>>() {
-		})
-				.to(GuiceDemoCache.class)
-				.in(Singleton.class);
+//		bind(new TypeLiteral<Cache<String, String>>() {
+//		})
+//				.to(GuiceDemoCache.class);
 	}
 
 	@Provides
@@ -41,4 +40,10 @@ public class ServerModule extends AbstractModule {
 		return System.currentTimeMillis();
 	}
 
+
+	@Provides
+	@Singleton
+	Cache<String, String> getCache() {
+		return new GuiceDemoCache();
+	}
 }
