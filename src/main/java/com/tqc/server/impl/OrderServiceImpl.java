@@ -3,6 +3,7 @@ package com.tqc.server.impl;
 import com.tqc.server.OrderService;
 import com.tqc.server.PaymentService;
 import com.tqc.server.PriceService;
+import com.tqc.server.anno.Logged;
 
 import javax.inject.Inject;
 
@@ -27,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
+	@Logged
 	public void sendToPayment(long orderId) {
 		long price = priceService.getPrice(orderId);
 		paymentService.pay(orderId, price, sessionManager.getSessionId());

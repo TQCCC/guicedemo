@@ -2,6 +2,7 @@ package com.tqc.server.impl;
 
 import com.google.common.cache.Cache;
 import com.tqc.server.PaymentService;
+import com.tqc.server.anno.Logged;
 
 import javax.inject.Inject;
 
@@ -18,14 +19,11 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
+	@Logged
 	public void pay(long orderId, long price, Long sessionId) {
-		System.out.println("start paying...");
-
 		System.out.println("orderId: " + orderId);
 		System.out.println("price: " + price);
 		System.out.println("sessionId: " + sessionId);
-
-		System.out.println("pay finished...");
 	}
 
 
