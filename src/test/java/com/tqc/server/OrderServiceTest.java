@@ -1,15 +1,11 @@
 package com.tqc.server;
 
-import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
-import com.google.inject.Provider;
-import com.google.inject.name.Named;
-import com.tqc.server.impl.PriceServiceImpl;
+import com.tqc.server.module.ServerModule;
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.inject.Inject;
-import java.util.List;
 
 /**
  * Created by tangqingchang on 2017/12/23.
@@ -20,27 +16,12 @@ public class OrderServiceTest {
 	private OrderService orderService;
 
 	@Inject
-	@Named("supportedCurrencies")
-	private Provider<List<String>> supportedCurrenciesProvider;
+	private PriceService priceService;
 
 
 	@Before
 	public void setUp() {
-		Guice.createInjector(
-				new ServerModule(),
-				new AbstractModule() {
-					@Override
-					protected void configure() {
-						bind(PriceServiceImpl.class).toInstance(new PriceServiceImpl() {
-							@Override
-							public long getPrice(long orderId) {
-								return 666L;
-							}
-						});
-					}
-				}
-		)
-				.injectMembers(this);
+		Guice.createInjector(new ServerModule()).injectMembers(this);
 	}
 
 	@Test
@@ -50,7 +31,7 @@ public class OrderServiceTest {
 
 	@Test
 	public void testSupportedCurrencies() {
-		System.out.println(supportedCurrenciesProvider.get().toString());
+		System.out.println(priceService.getSupportedCurrencies().toString());
 	}
 
 }

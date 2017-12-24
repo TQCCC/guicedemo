@@ -6,6 +6,7 @@ package com.tqc.server;
 public interface PaymentService {
 	/**
 	 * 支付
+	 *
 	 * @param orderId
 	 * @param price
 	 * @param sessionId

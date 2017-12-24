@@ -2,8 +2,6 @@ package com.tqc.helloworld;
 
 import com.google.inject.AbstractModule;
 import com.tqc.helloworld.anno.Output;
-import com.tqc.helloworld.MyApplet;
-import com.tqc.helloworld.MyDestination;
 import com.tqc.helloworld.impl.PrintStreamWriter;
 import com.tqc.helloworld.impl.StringWritingApplet;
 

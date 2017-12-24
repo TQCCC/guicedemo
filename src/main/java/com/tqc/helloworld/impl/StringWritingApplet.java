@@ -1,9 +1,9 @@
 package com.tqc.helloworld.impl;
 
 import com.google.inject.Provider;
-import com.tqc.helloworld.anno.Output;
 import com.tqc.helloworld.MyApplet;
 import com.tqc.helloworld.MyDestination;
+import com.tqc.helloworld.anno.Output;
 
 import javax.inject.Inject;
 

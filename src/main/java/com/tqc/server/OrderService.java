@@ -7,6 +7,7 @@ public interface OrderService {
 
 	/**
 	 * send to payment
+	 *
 	 * @param orderId
 	 */
 	void sendToPayment(long orderId);

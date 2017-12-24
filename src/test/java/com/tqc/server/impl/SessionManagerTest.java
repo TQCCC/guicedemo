@@ -1,13 +1,13 @@
 package com.tqc.server.impl;
 
 import com.google.inject.Guice;
-import com.tqc.server.ServerModule;
+import com.tqc.server.module.ServerModule;
 import org.junit.Before;
 import org.junit.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * Created by tangqingchang on 2017/12/23.
