@@ -13,6 +13,8 @@ import com.tqc.server.impl.OrderServiceImpl;
 import com.tqc.server.impl.PaymentServiceImpl;
 import com.tqc.server.impl.PriceServiceImpl;
 
+import javax.inject.Singleton;
+
 /**
  * Created by tangqingchang on 2017/12/23.
  */
@@ -29,7 +31,8 @@ public class ServerModule extends AbstractModule {
 
 		bind(new TypeLiteral<Cache<String, String>>() {
 		})
-				.to(GuiceDemoCache.class);
+				.to(GuiceDemoCache.class)
+				.in(Singleton.class);
 	}
 
 	@Provides
