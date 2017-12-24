@@ -1,4 +1,4 @@
-package com.tqc;
+package com.tqc.helloworld.module;
 
 import com.google.inject.AbstractModule;
 import com.tqc.helloworld.module.HelloWorldModule;
@@ -10,6 +10,7 @@ public class MainModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		install(new HelloWorldModule());
+		install(new PrintLineModule());
 	}
 
 }
