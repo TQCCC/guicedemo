@@ -1,5 +1,6 @@
 package com.tqc.server.impl;
 
+import com.google.common.cache.Cache;
 import com.tqc.server.PriceService;
 
 import javax.inject.Inject;
@@ -12,9 +13,12 @@ public class PriceServiceImpl implements PriceService {
 
 	private final Set<String> supportedCurrencies;
 
+	private final Cache<String, String> cache;
+
 	@Inject
-	public PriceServiceImpl(Set<String> supportedCurrencies) {
+	public PriceServiceImpl(Set<String> supportedCurrencies, Cache<String, String> cache) {
 		this.supportedCurrencies = supportedCurrencies;
+		this.cache = cache;
 	}
 
 	@Override
@@ -25,5 +29,10 @@ public class PriceServiceImpl implements PriceService {
 	@Override
 	public Set<String> getSupportedCurrencies() {
 		return supportedCurrencies;
+	}
+
+
+	public String getCachedValue(String key) {
+		return cache.getIfPresent(key);
 	}
 }

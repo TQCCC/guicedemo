@@ -19,7 +19,7 @@ class PriceServiceMock extends PriceServiceImpl {
 
 	@Inject
 	public PriceServiceMock(Set<String> supportedCurrencies) {
-		super(supportedCurrencies);
+		super(supportedCurrencies, null);
 	}
 
 	@Override
@@ -41,6 +41,7 @@ public class OrderServiceTest {
 	@Before
 	public void setUp() {
 		Guice.createInjector(
+				// override
 				Modules.override(new ServerModule())
 						.with(
 								new AbstractModule() {
