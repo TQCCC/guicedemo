@@ -1,7 +1,7 @@
 package com.tqc.helloworld.module;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.name.Names;
+import com.google.inject.multibindings.MapBinder;
 import com.tqc.helloworld.MyApplet;
 import com.tqc.helloworld.impl.PrintLineApplet;
 
@@ -11,8 +11,12 @@ import com.tqc.helloworld.impl.PrintLineApplet;
 public class PrintLineModule extends AbstractModule {
 	@Override
 	protected void configure() {
-		bind(MyApplet.class)
-				.annotatedWith(Names.named("println"))
-				.to(PrintLineApplet.class);
+
+		MapBinder.newMapBinder(binder(), String.class, MyApplet.class)
+				.addBinding("println").to(PrintLineApplet.class);
+
+//		bind(MyApplet.class)
+//				.annotatedWith(Names.named("println"))
+//				.to(PrintLineApplet.class);
 	}
 }
