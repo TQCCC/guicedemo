@@ -7,18 +7,17 @@ import com.google.inject.servlet.RequestScoped;
  */
 @RequestScoped
 public class RequestParams {
-	private String message;
+	private String greetingName;
 
 	public RequestParams() {
-
 		System.out.println("RequestParams constructed.");
 	}
 
-	public String getMessage() {
-		return message;
+	public String getGreetingName() {
+		return greetingName;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setGreetingName(String greetingName) {
+		this.greetingName = greetingName;
 	}
 }

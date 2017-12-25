@@ -22,7 +22,6 @@ public class StringWritingApplet implements MyApplet {
 		this.stringProvider = stringProvider;
 	}
 
-
 	private void writeString() {
 		destination.write(stringProvider.get());
 	}

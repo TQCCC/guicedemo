@@ -2,11 +2,9 @@ package com.tqc.guicedemospring;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.tqc.guicedemospring.des.WebDestination;
-import com.tqc.guicedemospring.model.RequestParams;
+import com.tqc.guicedemospring.handler.GreetingHandler;
 import com.tqc.guicedemospring.module.HelloWorldWebModule;
 import com.tqc.guicedemospring.module.SpringAwareModule;
-import com.tqc.helloworld.MyApplet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -30,21 +28,28 @@ public class GuiceDemoSpringApplication {
 		);
 	}
 
-	@Bean
-	@RequestScope
-	MyApplet applet(Injector injector) {
-		return injector.getInstance(MyApplet.class);
-	}
+//	@Bean
+//	@RequestScope
+//	MyApplet applet(Injector injector) {
+//		return injector.getInstance(MyApplet.class);
+//	}
+//
+//	@Bean
+//	@RequestScope
+//	WebDestination destination(Injector injector) {
+//		return injector.getInstance(WebDestination.class);
+//	}
+//
+//	@Bean
+//	@RequestScope
+//	RequestParams params(Injector injector) {
+//		return injector.getInstance(RequestParams.class);
+//	}
 
 	@Bean
 	@RequestScope
-	WebDestination destination(Injector injector) {
-		return injector.getInstance(WebDestination.class);
+	GreetingHandler greetingHandler(Injector injector) {
+		return injector.getInstance(GreetingHandler.class);
 	}
 
-	@Bean
-	@RequestScope
-	RequestParams params(Injector injector) {
-		return injector.getInstance(RequestParams.class);
-	}
 }

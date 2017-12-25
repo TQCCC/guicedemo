@@ -1,8 +1,6 @@
 package com.tqc.guicedemospring.controller;
 
-import com.tqc.guicedemospring.des.WebDestination;
-import com.tqc.guicedemospring.model.RequestParams;
-import com.tqc.helloworld.MyApplet;
+import com.tqc.guicedemospring.handler.GreetingHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,19 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-	@Autowired
-	MyApplet applet;
+//	@Autowired
+//	MyApplet applet;
+//	@Autowired
+//	WebDestination webDestination;
+//	@Autowired
+//	RequestParams params;
 
 	@Autowired
-	WebDestination webDestination;
+	GreetingHandler greetingHandler;
 
-	@Autowired
-	RequestParams params;
+	@GetMapping("/greeting")
+	String home(@RequestParam("name") String name) {
 
-	@GetMapping("/hello")
-	String home(@RequestParam("msg") String msg) {
-		params.setMessage(msg);
-		applet.run();
-		return webDestination.getResult();
+		return greetingHandler.getByName(name);
+
+//		params.setGreetingName(name);
+//		applet.run();
+//		return webDestination.getResult();
 	}
 }

@@ -4,7 +4,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.servlet.ServletModule;
 import com.tqc.guicedemospring.des.WebDestination;
-import com.tqc.guicedemospring.model.RequestParams;
+import com.tqc.guicedemospring.handler.GreetingGenerator;
 import com.tqc.helloworld.MyApplet;
 import com.tqc.helloworld.MyDestination;
 import com.tqc.helloworld.anno.Output;
@@ -24,7 +24,7 @@ public class HelloWorldWebModule extends AbstractModule {
 
 	@Provides
 	@Output
-	String getOutputString(RequestParams params) {
-		return params.getMessage();
+	String getOutputString(GreetingGenerator greetingGenerator) {
+		return greetingGenerator.getGreetingMessage();
 	}
 }
