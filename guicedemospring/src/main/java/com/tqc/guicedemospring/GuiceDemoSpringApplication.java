@@ -5,10 +5,12 @@ import com.google.inject.Injector;
 import com.tqc.guicedemospring.des.WebDestination;
 import com.tqc.guicedemospring.model.RequestParams;
 import com.tqc.guicedemospring.module.HelloWorldWebModule;
+import com.tqc.guicedemospring.module.SpringAwareModule;
 import com.tqc.helloworld.MyApplet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -21,8 +23,11 @@ public class GuiceDemoSpringApplication {
 	}
 
 	@Bean
-	Injector injector() {
-		return Guice.createInjector(new HelloWorldWebModule());
+	Injector injector(ApplicationContext applicationContext) {
+		return Guice.createInjector(
+				new HelloWorldWebModule(),
+				new SpringAwareModule(applicationContext)
+		);
 	}
 
 	@Bean
