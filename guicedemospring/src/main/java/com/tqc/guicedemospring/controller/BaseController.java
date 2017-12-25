@@ -12,13 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-//	@Autowired
-//	MyApplet applet;
-//	@Autowired
-//	WebDestination webDestination;
-//	@Autowired
-//	RequestParams params;
-
 	@Autowired
 	GreetingHandler greetingHandler;
 
@@ -27,8 +20,5 @@ public class BaseController {
 
 		return greetingHandler.getByName(name);
 
-//		params.setGreetingName(name);
-//		applet.run();
-//		return webDestination.getResult();
 	}
 }

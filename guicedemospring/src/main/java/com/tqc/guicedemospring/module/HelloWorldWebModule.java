@@ -1,10 +1,9 @@
 package com.tqc.guicedemospring.module;
 
 import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
 import com.google.inject.servlet.ServletModule;
 import com.tqc.guicedemospring.des.WebDestination;
-import com.tqc.guicedemospring.handler.GreetingGenerator;
+import com.tqc.guicedemospring.handler.GreetingMessageProvider;
 import com.tqc.helloworld.MyApplet;
 import com.tqc.helloworld.MyDestination;
 import com.tqc.helloworld.anno.Output;
@@ -20,11 +19,7 @@ public class HelloWorldWebModule extends AbstractModule {
 
 		bind(MyApplet.class).to(StringWritingApplet.class);
 		bind(MyDestination.class).to(WebDestination.class);
+		bind(String.class).annotatedWith(Output.class).toProvider(GreetingMessageProvider.class);
 	}
 
-	@Provides
-	@Output
-	String getOutputString(GreetingGenerator greetingGenerator) {
-		return greetingGenerator.getGreetingMessage();
-	}
 }

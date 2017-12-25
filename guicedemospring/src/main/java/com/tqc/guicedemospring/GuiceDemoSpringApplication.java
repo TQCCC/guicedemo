@@ -28,24 +28,6 @@ public class GuiceDemoSpringApplication {
 		);
 	}
 
-//	@Bean
-//	@RequestScope
-//	MyApplet applet(Injector injector) {
-//		return injector.getInstance(MyApplet.class);
-//	}
-//
-//	@Bean
-//	@RequestScope
-//	WebDestination destination(Injector injector) {
-//		return injector.getInstance(WebDestination.class);
-//	}
-//
-//	@Bean
-//	@RequestScope
-//	RequestParams params(Injector injector) {
-//		return injector.getInstance(RequestParams.class);
-//	}
-
 	@Bean
 	@RequestScope
 	GreetingHandler greetingHandler(Injector injector) {
