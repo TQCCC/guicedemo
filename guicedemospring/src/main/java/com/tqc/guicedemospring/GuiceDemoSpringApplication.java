@@ -4,7 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.tqc.guicedemospring.handler.GreetingHandler;
 import com.tqc.guicedemospring.module.HelloWorldWebModule;
-import com.tqc.guicedemospring.module.SpringAwareModule;
+import com.tqc.guicedemospring.module.SpringAwareServletModule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -24,7 +24,7 @@ public class GuiceDemoSpringApplication {
 	Injector injector(ApplicationContext applicationContext) {
 		return Guice.createInjector(
 				new HelloWorldWebModule(),
-				new SpringAwareModule(applicationContext)
+				new SpringAwareServletModule(applicationContext)
 		);
 	}
 
